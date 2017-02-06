@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@* O razor tem a uma nomenclatura que começa com @ *@ 
+
+@{
+    var titulo = "Escola de Informática LGroup";
+    
+}
+
+<div class="container">
+    <header>
+        <h2>@titulo</h2>
+    </header>
+
+    @{
+        //Pomos formar blocos de conteúdo dentro do @
+        //Este bloco é separado por chaves
+        var saudacoes = "Seja bem vindo a nossa Escola";
+        string[] cursos = {"C#", "MVC", "DDD", "Web Standard"};
+    }
+    <h3 class="text-primary">@saudacoes</h3>
+    <article>
+        <h4>Nossos cursos</h4>
+    </article>
+        <ol>
+            @foreach(var curso in cursos){
+                <li>@curso @if (curso == "MVC") { <strong> - Atual</strong>}</li>
+            }
+        </ol>
+</div>
+
+

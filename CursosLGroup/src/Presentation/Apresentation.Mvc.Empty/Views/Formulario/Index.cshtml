@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exemplo de como um formulario funciona</h2>
+<!-- O metodo Get é como será enviado os dados -->
+<!-- Action é para onde serão enviado os dados -->
+<form class="form-horizontal"
+      method="post"
+      action="@Url.Action("PostComModel")">
+    <div class="form-group">
+        <div class="col-xs-2">
+            <label class="control-label">
+                Nome
+            </label>
+        </div>
+        <div class="col-xs-2">
+            <input type="text"
+                   class="form-control"
+                   name="nome"
+                   placeholder="Adicione seu nome" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-2">
+            <label class="control-label">
+                Email
+            </label>
+        </div>
+        <div class="col-xs-2">
+            <input type="text"
+                   name="email"
+                   class="form-control"
+                   placeholder="Adicione seu Email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-2">
+            <button type="submit"
+                    class="btn btn-primary">
+                Salvar
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admnistrativo/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <button class="btn btn-link" id="pagtoProfessor">
+        <span class="glyphicon glyphicon-credit-card"></span>
+        Pagamento Professor
+    </button>
+</div>
+<!--Para usar modais, temos que referenciar a classe modal-->
+<div class="modal" id="modal"></div>
+
+@section Scripts{
+
+<script type="text/javascript">
+
+    //Podemos utilizar o razor, que um controle de servidor
+    //Junto com o js que algo que roda no client
+    var url = "@Url.Action("PagarProfessor")";
+
+    //Vamos usar o Jquery junto com o bootstrap.js
+    //O que o código abaixo esta dizendo??
+    //Quando clicarmos no btn com id = pagtoProfessor, será executado
+    //O código abaixo:
+    $("#pagtoProfessor").click(function () {
+        $("#modal").load(url, function () {
+            $("#modal").modal();//Modal => Bootstrap.js
+                                //      => Para mais detalhe ver bootstrap
+        });
+    });
+
+</script>
+    }

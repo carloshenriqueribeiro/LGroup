@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    
+    <!--Ele cria sessões -->
+    <!--Exemplos:-->
+    <!--Na pagina Sobre vou colocar os Styles entre esta sessão-->
+    @RenderSection("Styles", false)
+
+</head>
+<body>
+
+    <!--Partial => Helper utilizado para retornar um HTML-->
+    <!--RenderPartil é parecido com o Partial-->
+
+    <!--Diferenças-->
+    <!--O RenderPartial despeja o Html no document-->
+    <!--O Partial pode ser manipulado, como por exemplo: associar o Html.Partial("_PartialMenu")
+        a uma variável-->
+
+    @Html.Partial("_PartialMenu")
+
+    <section class="container body-content">
+        @*conteudo interno (miolo), onde o ficaram as views.*@
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </section>
+
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!--O Render section irá determinar o lugar onde será renderizado os scripts-->
+    <!--O Segundo parametro informar se é obrigatório informar ou não a section nas views-->
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

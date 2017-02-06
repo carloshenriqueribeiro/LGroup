@@ -1,0 +1,49 @@
+﻿
+<!--Estamos dizendo que esta view deverá receber uma lista de categorias-->
+<!--Logo o modelo/regra de nogocio será baseada na categoria-->
+@model IEnumerable<Domain.GerenciamentoCursosLGroup.Entities.CategoriaEntity>
+
+@{
+    ViewBag.Title = "Categorias de Curso";
+}
+
+<h4 class="page-header">Categorias</h4>
+
+<p>@Html.ActionLink("Criar Novo", "Create", "Categoria")</p>
+
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.Nome)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--o elemento Model corresponda ao modelo da página, ou seja, aquela que esta sendo
+            informada na controller-->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <!--Func<int, int> => é uma função que dado um inteiro retorna um inteiro
+                    Para usa-la usamos expressões lambda
+                     -->
+                <!-- o x => representa o Modelo
+                     x => item.nome => uma função que dado o modelo da view retorna um item
+                    -->
+                <td>@Html.DisplayFor(x => item.Nome)</td>
+                <!--Ctrl K + C => Comenta-->
+                <!--Ctrl K + U => DesComenta-->
+                @*<td>
+                    @Html.ActionLink("<< Voltar", "index", "Categoria")
+                </td>*@
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+

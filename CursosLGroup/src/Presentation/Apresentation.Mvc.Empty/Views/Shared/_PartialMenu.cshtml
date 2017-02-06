@@ -1,0 +1,114 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <section class="container">
+        <header class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Gerenciamento de cursos", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </header>
+        <section class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--Alunos-->
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Alunos</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Listar", "Index", "Aluno")</li>
+                        <li>@Html.ActionLink("Criar novo", "Create", "Aluno")</li>
+                    </ul>
+                </li>
+                <!--Cursos-->
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Cursos</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Listar", "Index", "Cursos")</li>
+                        <li>@Html.ActionLink("Criar novo", "Create", "Cursos")</li>
+                    </ul>
+                </li>
+
+                <!--Formulario-->
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Formularios</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Formulario", "Index", "Formulario")</li>
+
+                        <li>@Html.ActionLink("ModelBinder XML", "Index", "ModelBinder")</li>
+                        <li>@Html.ActionLink("ModelBinder UpperCase", "Index2", "ModelBinder")</li>
+                    </ul>
+                </li>
+
+                <!--Sobre-->
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Sobre</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Sobre a Empresa", "Index", "Sobre")</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Categorias</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Listar", "Index", "Categoria")</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Erros Gerenciados</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Modo Avancado", "Index", "ErrosGerenciados")</li>
+                        <li>@Html.ActionLink("Erro Global", "Global", "ErrosGerenciados")</li>
+                        <li>@Html.ActionLink("Erro Especifico", "ErroEspecifico", "ErrosGerenciados")</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="dropdown-toggle" data-toggle="dropdown"
+                         style="padding-bottom:15px; margin: 0 15px; padding-top: 15px">
+                        <a href="#">Acessos</a>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Usuário", "Index", "Usuario")</li>
+                        <li>@Html.ActionLink("Perfis", "Index", "Perfil")</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    @Html.ActionLink("Admin", "Index", "Home", new { area = "Admnistrativo" }, null)
+                </li>
+
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    <li>
+                        <a href="#">Olá @HttpContext.Current.User.Identity.Name</a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sair", "Logoff", "Login")
+                    </li>
+                }
+            </ul>
+
+        </section>
+    </section>
+</div>

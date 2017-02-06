@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0 Apresentation", "1.0 Apresentation", "{D87ED483-630B-4613-8353-4083468909BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.0 Domain", "2.0 Domain", "{F6F24D16-4CF3-4DF9-8BE7-5BF1555E02E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.0 Infra", "3.0 Infra", "{CE30F93B-4AF5-452B-B87D-C8914B7B86A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apresentation.Mvc.ExemploTemplatePronto", "src\Presentation\Apresentation.Mvc.ExemploTemplatePronto\Apresentation.Mvc.ExemploTemplatePronto.csproj", "{E032D035-1B08-4FA4-939C-CB371CBAF757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apresentation.Mvc.Empty", "src\Presentation\Apresentation.Mvc.Empty\Apresentation.Mvc.Empty.csproj", "{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.GerenciamentoCursosLGroup", "src\Domain\Domain.GerenciamentoCursosLGroup\Domain.GerenciamentoCursosLGroup.csproj", "{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.EF", "src\Infra\Data.EF\Data.EF.csproj", "{80E963FD-26CF-4692-948B-1D51232573D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.UIConsole", "src\Presentation\Presentation.UIConsole\Presentation.UIConsole.csproj", "{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0 Services", "4.0 Services", "{56EA002E-F8B7-4DE1-BACA-04084624FAF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acessos", "src\Acessos\Acessos.csproj", "{7655A912-912E-43B0-ABC1-878D867CD4EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6D977C8B-46AA-43D4-9725-2B99C0498425}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.T4Console", "src\Presentation\Presentation.T4Console\Presentation.T4Console.csproj", "{2FB5B00E-13FA-4CEE-8E70-507440B9C117}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E032D035-1B08-4FA4-939C-CB371CBAF757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E032D035-1B08-4FA4-939C-CB371CBAF757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E032D035-1B08-4FA4-939C-CB371CBAF757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E032D035-1B08-4FA4-939C-CB371CBAF757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E963FD-26CF-4692-948B-1D51232573D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E963FD-26CF-4692-948B-1D51232573D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E963FD-26CF-4692-948B-1D51232573D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E963FD-26CF-4692-948B-1D51232573D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7655A912-912E-43B0-ABC1-878D867CD4EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7655A912-912E-43B0-ABC1-878D867CD4EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7655A912-912E-43B0-ABC1-878D867CD4EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7655A912-912E-43B0-ABC1-878D867CD4EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB5B00E-13FA-4CEE-8E70-507440B9C117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB5B00E-13FA-4CEE-8E70-507440B9C117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB5B00E-13FA-4CEE-8E70-507440B9C117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB5B00E-13FA-4CEE-8E70-507440B9C117}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E032D035-1B08-4FA4-939C-CB371CBAF757} = {D87ED483-630B-4613-8353-4083468909BF}
+		{AC3DB66E-F5E2-48C9-8A86-2605F8FCB418} = {D87ED483-630B-4613-8353-4083468909BF}
+		{F0A56D8D-DA1F-47CE-B1A6-252D90A8C64D} = {F6F24D16-4CF3-4DF9-8BE7-5BF1555E02E3}
+		{80E963FD-26CF-4692-948B-1D51232573D1} = {CE30F93B-4AF5-452B-B87D-C8914B7B86A8}
+		{ABB259C9-D2DB-4CB4-93F8-FB5C9A6AB2BD} = {D87ED483-630B-4613-8353-4083468909BF}
+		{7655A912-912E-43B0-ABC1-878D867CD4EA} = {56EA002E-F8B7-4DE1-BACA-04084624FAF7}
+		{2FB5B00E-13FA-4CEE-8E70-507440B9C117} = {D87ED483-630B-4613-8353-4083468909BF}
+	EndGlobalSection
+EndGlobal

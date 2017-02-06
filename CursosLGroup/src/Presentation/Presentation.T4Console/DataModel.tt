@@ -1,0 +1,57 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+
+using System;
+   
+  namespace VentoNorte
+  {
+  <# 
+  const string connString = @"Data Source=(localdb)\Projects;Initial Catalog=CursoLGroup;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+        using (var conn = new SqlConnection(connString))
+        {
+              var commTable = new SqlCommand(@"SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME <> 'sysdiagrams'", conn);
+              conn.Open();
+        
+              var dtTabelas = new DataTable();
+              var adptTabelas = new SqlDataAdapter(commTable);
+              adptTabelas.Fill(dtTabelas);       
+              foreach (DataRow tabela in dtTabelas.Rows)
+              {
+                    string tableName = tabela["TABLE_NAME"].ToString();
+  #>
+        public class <# Write(tableName); #>     
+        { 
+  <#    
+					var comQ = @"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{0}'";
+                    var commCol = new SqlCommand(string.Format(comQ, tableName), conn);
+              
+                    var dtColunas = new DataTable();
+                    var adptColunas = new SqlDataAdapter(commCol);
+                    adptColunas.Fill(dtColunas);
+                    foreach (DataRow coluna in dtColunas.Rows)
+                    {
+                          string columnName = coluna["COLUMN_NAME"].ToString();
+                          string columnType = coluna["DATA_TYPE"].ToString() == "nvarchar" || coluna["DATA_TYPE"].ToString() == "varbinary" ? "string" 
+											  : coluna["DATA_TYPE"].ToString() == "datetime"  ? "DateTime" 
+											  : coluna["DATA_TYPE"].ToString() == "bit" ? "bool" : coluna["DATA_TYPE"].ToString();
+  #>
+              public virtual <# Write("{0} {1}", columnType, columnName); #> { get; set;}
+  <#                      
+                    }
+  #>
+        }
+        
+  <#
+              }           
+              conn.Close();
+        }
+  #>    
+  }

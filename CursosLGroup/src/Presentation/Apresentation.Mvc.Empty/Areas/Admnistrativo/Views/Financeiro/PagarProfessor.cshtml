@@ -1,0 +1,112 @@
+﻿@model Apresentation.Mvc.Empty.Areas.Admnistrativo.Models.PagamentoProfessorViewModel
+
+@{
+    ViewBag.Title = "PagarProfessor";
+    Layout = "~/Areas/Admnistrativo/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PagarProfessor</h2>
+
+@{
+    var options = new AjaxOptions()
+    {
+        HttpMethod = "Post",
+        OnSuccess = "sucesso",
+        OnComplete = "completado",
+        OnFailure = "falha"
+    };
+}
+
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        @using (Ajax.BeginForm("PagarProfessor", "Financeiro", options))
+        {
+            <!--Cabecalho-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">x</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4>Pagamento de Professores</h4>
+            </div>
+
+            @Html.AntiForgeryToken()
+            <!--Corpo-->
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <h4>PagamentoProfessorViewModel</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Professores, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(x => x.IdProfessor, Model.Professores,
+                        new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+
+                            <input type="submit"
+                                   value="Create"
+                                   class="btn btn-default" />
+                            <!--Tudo que for dissmiss é pra fechar!!!-->
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                Fechar
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts{
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <!--Para funcionar o Ajax é necessário usar o pacote abaixo-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <script type="text/javascript">
+
+        //O retorno do Json irá ser preenchido no parametro dados
+        function sucesso(dados) {
+            //alert(JSON.stringify(dados))
+            alert(dados.mensagem);
+        }
+        function completado(response) {
+            alert(response.responseJSON.mensagem);
+        }
+        function falha(dados) {
+            alert(JSON.stringify(dados));
+        }
+    </script>
+}
+
+

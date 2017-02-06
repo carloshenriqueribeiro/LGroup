@@ -1,0 +1,10 @@
+﻿<!--O modelo desta página será as informações do erro-->
+@model System.Web.Mvc.HandleErrorInfo
+
+<!--Dado o modelo, que é a exception, renderizamos para o usuário-->
+<section>
+    <h3>Erro gerenciado</h3>
+    <p>Action: @Model.ActionName</p>
+    <p>Controller: @Model.ControllerName</p>
+    <p>Erro - Exception: @Model.Exception.Message</p>
+</section>

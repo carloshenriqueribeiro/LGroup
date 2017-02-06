@@ -1,0 +1,12 @@
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.exe.config
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.exe
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.pdb
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.csprojResolveAssemblyReference.cache
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.exe
+D:\CursoMvc\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.pdb
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.exe.config
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.exe
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\bin\Debug\Presentation.UIConsole.pdb
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.csprojResolveAssemblyReference.cache
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.exe
+D:\CursoMvc\LGroup\Turma2\CursosLGroup\src\Presentation\Presentation.UIConsole\obj\Debug\Presentation.UIConsole.pdb
